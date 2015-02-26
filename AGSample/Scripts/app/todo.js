@@ -1,11 +1,16 @@
-﻿function TodoCtrl($scope) {
+﻿var todoApp = angular.module('todoApp', []);
+
+todoApp.controller("TodoCtrl", function ($scope) {
     $scope.todos = [
       { text: 'AngularJSの学習', done: true },
-      { text: 'AngularJSのアプリケーション構築', done: false }];
+      { text: 'AngularJSのアプリケーション構築', done: false }
+    ];
+
     $scope.addTodo = function () {
         $scope.todos.push({ text: $scope.todoText, done: false });
         $scope.todoText = '';
     };
+
     $scope.remaining = function () {
         var count = 0;
         angular.forEach($scope.todos, function (todo) {
@@ -13,6 +18,7 @@
         });
         return count;
     };
+
     $scope.archive = function () {
         var oldTodos = $scope.todos;
         $scope.todos = [];
@@ -20,4 +26,5 @@
             if (!todo.done) $scope.todos.push(todo);
         });
     };
-}
+});
+
