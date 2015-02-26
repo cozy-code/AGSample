@@ -13,6 +13,7 @@ namespace AGSample
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            System.Web.Http.GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
 }
