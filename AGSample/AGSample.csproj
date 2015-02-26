@@ -875,6 +875,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TodoesController.cs" />
     <Compile Include="DAL\AGSampleInitializer.cs" />
     <Compile Include="Global.asax.cs">
