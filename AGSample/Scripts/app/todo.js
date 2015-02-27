@@ -1,12 +1,11 @@
 ﻿/// <reference path="~/Scripts/angular.min.js" />
+/// <reference path="~/Scripts/angular-resource.js" />
 
-var todoApp = angular.module('todoApp', []);
+var todoApp = angular.module('todoApp', ['ngResource']);
 
-todoApp.controller("TodoCtrl", function ($scope) {
-    $scope.todos = [
-      { text: 'AngularJSの学習', done: true },
-      { text: 'AngularJSのアプリケーション構築', done: false }
-    ];
+todoApp.controller("TodoCtrl", function ($scope, $resource) {
+    var todoClass = $resource('/api/Todoes/:id', { id: '@Id' });
+    $scope.todos = todoClass.query();
 
     $scope.addTodo = function () {
         $scope.todos.push({ text: $scope.todoText, done: false });
