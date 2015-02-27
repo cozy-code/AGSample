@@ -1,4 +1,6 @@
-﻿var todoApp = angular.module('todoApp', []);
+﻿/// <reference path="~/Scripts/angular.min.js" />
+
+var todoApp = angular.module('todoApp', []);
 
 todoApp.controller("TodoCtrl", function ($scope) {
     $scope.todos = [
