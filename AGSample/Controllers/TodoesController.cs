@@ -26,7 +26,7 @@ namespace AGSample.Controllers
 
         // GET: api/Todoes/5
         [ResponseType(typeof(Todo))]
-        public async Task<IHttpActionResult> GetTodo(Guid id)
+        public async Task<IHttpActionResult> GetTodo(int id)
         {
             Todo todo = await db.Todos.FindAsync(id);
             if (todo == null)
@@ -39,7 +39,7 @@ namespace AGSample.Controllers
 
         // PUT: api/Todoes/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutTodo(Guid id, Todo todo)
+        public async Task<IHttpActionResult> PutTodo(int id, Todo todo)
         {
             if (!ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace AGSample.Controllers
 
         // DELETE: api/Todoes/5
         [ResponseType(typeof(Todo))]
-        public async Task<IHttpActionResult> DeleteTodo(Guid id)
+        public async Task<IHttpActionResult> DeleteTodo(int id)
         {
             Todo todo = await db.Todos.FindAsync(id);
             if (todo == null)
@@ -112,7 +112,7 @@ namespace AGSample.Controllers
             base.Dispose(disposing);
         }
 
-        private bool TodoExists(Guid id)
+        private bool TodoExists(int id)
         {
             return db.Todos.Count(e => e.Id == id) > 0;
         }

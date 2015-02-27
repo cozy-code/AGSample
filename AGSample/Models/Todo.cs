@@ -8,8 +8,7 @@ namespace AGSample.Models
 {
     public class Todo
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Text { get; set; }
         public bool Done { get; set; }
     }
