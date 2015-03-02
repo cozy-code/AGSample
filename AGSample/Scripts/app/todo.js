@@ -53,7 +53,7 @@ todoApp.controller("TodoCtrl", function ($scope, $resource) {
         $scope.todos = [];
         angular.forEach(oldTodos, function (value, key) {
             if (value.Done) {               //終わってら
-                todoClass.delete(value.Id); //削除WebAPIコール
+                todoClass.delete({ id: value.Id }); //削除WebAPIコール
             } else {                        //終わってなかったら
                 $scope.todos.push(value)    //ToDoリストに戻す
             }
